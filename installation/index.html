@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Installation - Python Get-started</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "installation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/sh.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Python Get-started
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des matières</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-sur-windows">Installation sur Windows</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-sur-linux">Installation sur Linux</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-sur-macos">Installation sur macOS</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../conventions/">Conventions</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Python Get-started</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation-de-python">Installation de Python</h1>
+<h2 id="table-des-matieres">Table des matières</h2>
+<ul>
+<li><a href="#installation-sur-windows">Installation sur Windows</a></li>
+<li><a href="#installation-sur-linux">Installation sur Linux</a></li>
+<li><a href="#installation-sur-macos">Installation sur macOS</a></li>
+</ul>
+<hr />
+<h2 id="installation-sur-windows">Installation sur Windows</h2>
+<h3 id="etape-1-telecharger-python">Étape 1 : Télécharger Python</h3>
+<ol>
+<li>Rendez-vous sur le site officiel de <a href="https://www.python.org/downloads/">Python</a>.</li>
+<li>Téléchargez l'installateur pour Windows (la dernière version stable).</li>
+</ol>
+<h3 id="etape-2-installation-de-python">Étape 2 : Installation de Python</h3>
+<ol>
+<li>Exécutez l'installateur que vous venez de télécharger.</li>
+<li><strong>Important :</strong> Cochez la case "Add Python to PATH" avant de cliquer sur "Install Now".</li>
+<li>Cliquez sur <strong>Install Now</strong> et suivez les instructions.</li>
+</ol>
+<h3 id="etape-3-verifier-linstallation">Étape 3 : Vérifier l'installation</h3>
+<ol>
+<li>Ouvrez l'invite de commande (Windows + R, tapez <code>cmd</code>).</li>
+<li>Tapez <code>python --version</code> pour vérifier la version installée.</li>
+</ol>
+<hr />
+<h2 id="installation-sur-linux">Installation sur Linux</h2>
+<h3 id="etape-1-mettre-a-jour-les-packages">Étape 1 : Mettre à jour les packages</h3>
+<p>Avant d'installer Python, assurez-vous que les paquets sont à jour :</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade
+</code></pre>
+<h3 id="etape-2-installer-python">Étape 2 : Installer Python</h3>
+<p>Pour Ubuntu ou Debian, utilisez la commande suivante :</p>
+<pre><code class="language-bash">sudo apt install python3
+</code></pre>
+<p>Pour Fedora :</p>
+<pre><code class="language-bash">sudo dnf install python3
+</code></pre>
+<p>Pour Arch Linux :</p>
+<pre><code class="language-bash">sudo pacman -S python
+</code></pre>
+<h3 id="etape-3-verifier-linstallation_1">Étape 3 : Vérifier l'installation</h3>
+<p>Tapez <code>python3 --version</code> pour vérifier la version installée.</p>
+<hr />
+<h2 id="installation-sur-macos">Installation sur macOS</h2>
+<h3 id="etape-1-telecharger-python_1">Étape 1 : Télécharger Python</h3>
+<ol>
+<li>Rendez-vous sur le site officiel de <a href="https://www.python.org/downloads/">Python</a>.</li>
+<li>Téléchargez l'installateur pour macOS (la dernière version stable).</li>
+</ol>
+<h3 id="etape-2-installation-de-python_1">Étape 2 : Installation de Python</h3>
+<ol>
+<li>Ouvrez le fichier <code>.pkg</code> téléchargé. </li>
+<li>Suivez les instructions de l'installateur.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Accueil"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../conventions/" class="btn btn-neutral float-right" title="Conventions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../conventions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

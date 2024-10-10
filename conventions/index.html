@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Conventions - Python Get-started</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Conventions";
+        var mkdocs_page_input_path = "conventions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/sh.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Python Get-started
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Conventions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#la-pep-8">La PEP 8</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structuration-du-code">Structuration du code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-conventions">Les conventions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#boite-a-outils">Boîte à outils</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Python Get-started</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Conventions</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><img 
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" 
+    width="45" 
+    id="topimage"
+/></p>
+<h1 id="documentation-python">Documentation Python</h1>
+<p>Cette page répertorie toutes les conventions que nous appliquerons aux développements impliquant du Python,
+elles permettront d'uniformiser notre code afin de faciliter la reprise, la maintenance et la compréhension par nos successeurs.
+La documentation qualité s'appuiera sur la PEP 8 afin de la rendre la plus générique et évolutive possible.Tout en ajoutant
+et en modifiant certains éléments. (<a href="https://peps.python.org/pep-0008/">PEP 8</a>)</p>
+<h2 id="la-pep-8">La PEP 8</h2>
+<h3 id="introduction">Introduction</h3>
+<p>La PEP 8 est un document écrit par les créateurs de Python, il contient les conventions de codage Python les plus répendues de nos jours,
+elle est régulièrement mise à jour et disponible pour tous.<br />
+Il en existe également une déclinaison pour la langage C, mais nous ne la détaillerons pas ici.<br />
+L'objectif principal des normes est de rendre le code plus lisible et plus simple à reprendre,
+on n'a pas forcément envie de reprendre 3000 lignes empactées sans instructions, pas vrai ? ;)<br />
+Voici donc quelques crédos qui pourront vous guider dans votre reflexion : <a href="https://peps.python.org/pep-0020/">PEP 20</a></p>
+<h3 id="application">Application</h3>
+<p>Le plus important lors de l'écriture d'un code est l'assiduité, et encore plus lors de l'écriture d'une fonction ou d'un petit bout de code,
+c'est à ce moment qu'il faudra la rendre la plus générique possible pour qu'elle soit potentiellement réutilisable dans des projets futurs ou même dans le même projet,
+c'est toujours plaisant de pouvoir réutiliser quelque chose qui marche bien sans avoir à tout réécrire !<br />
+Cependant dans certains cas ces recommendations ne sont pas forcément à appliquer surtout si le projet ne s'y prête pas,
+ou bien dans le cas de l'utilisation d'un framework particulier qui nécessiterait une syntaxe particulière (exemple: décorateurs des routes Flask)</p>
+<p>Quelques exemples de cas où l'application des principes pourrait être à éviter:</p>
+<ul>
+<li>Suivre le guide rendrait le code moins lisible</li>
+<li>Le code autours suit une autre convention</li>
+<li>La version de Python utilisée dans le reste du code n'est pas compatible avec la nouvelle syntaxe</li>
+</ul>
+<h2 id="structuration-du-code">Structuration du code</h2>
+<h3 id="indentation">Indentation</h3>
+<p>L'indentation des lignes se fait à l'aide des espaces, <strong>1 indentation = 4 espaces</strong><br />
+Si vous utilisez VSCode pour travailler, vous pouvez définir ce paramètre dans la barre d'outils tout en bas : Spaces &gt; Change tab display size &gt; 4.</p>
+<h4 id="les-fonctions">Les fonctions</h4>
+<p>Lors de l'écriture d'une fonction ou d'un appel fonction, les arguments peuvent prendre énormément de place sur la ligne,
+nous verrons plus tard la limite à respecter, en attendant, lorsque l'appel ou la liste d'arguments est trop longue,
+les arguments doivent être placés à la ligne:</p>
+<pre><code class="language-python"># On peut aligner les arguments sur la paranthèse d'ouverture
+def nom_de_fonction_long(param_1, param_2,
+                         param_3, param_4):
+    print(param_1)
+
+resultat = nom_de_fonction_long(param_1, param_2,
+                                param_3, param_4)
+
+# Ou alors
+# On placera les arguments en dessous avec une indentation supplémentaire par rapport au code de la fonction
+# Afin de différencier les arguments du code
+def nom_de_fonction_long(
+        param_1, param_2, param_3,
+        param_4):
+    print(param_1)
+
+resultat = nom_de_fonction_long(
+    param_1, param_2, param_3,
+    param_4)
+
+# Ou:
+resultat = nom_de_fonction_long(
+    param_1, param_2,
+    param_3, param_4
+)
+</code></pre>
+<h4 id="les-conditions">Les conditions</h4>
+<p>Lors de la constitution d'une condition, il se peut qu'il y ait plusieurs "and" ou "or", cela peut rendre la ligne particulièrement longue,
+ainsi nous ferons le découpage de la manière suivante:</p>
+<pre><code class="language-python"># Chaque 'and' ou 'or' sera sur une nouvelle ligne 4 espaces plus loin que la parenthèse d'ouverture, soit 1 indentation.
+if (condition1
+        and condition2
+        and condition3
+        or condition4):
+    return
+</code></pre>
+<h4 id="les-listes-et-dictionnaires">Les listes et dictionnaires</h4>
+<p>Afin de conserver une forme qui reste lisible lors de la définition d'une liste ou d'un dictionnaire, s'il s'agit d'un objet à plusieurs dimensions,
+on gardera toujours une forme cohérente avec la forme réelle qu'aura l'objet.</p>
+<pre><code class="language-python"># Dans le cas d'une liste à 1 dimension:
+ma_liste = [
+    1, 2, 3,
+    4, 5, 6,
+    7, 8, 9
+]
+
+# 2 dimensions:
+ma_liste = [
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10]
+]
+
+# 3 dimensions:
+ma_liste = [
+    [
+        [1, 2, 3],
+        [4, 5, 6]
+    ],
+    [
+        [7, 8, 9],
+        [10, 11, 12]
+    ]
+]
+# Et ainsi de suite..
+
+# Pour les dictionnaires :
+mon_dico = {
+    '1': 'oui',
+    '2': 'stiti'
+}
+</code></pre>
+<h3 id="longueur-des-lignes-a-respecter">Longueur des lignes à respecter</h3>
+<p><strong>Quand on lit un code, c'est pas marrant de scroller à l'infini à l'horizontale !</strong><br />
+Pour éviter ça, on va limiter la longueur des lignes de code de manière à tout garder visible à l'écran pour un maximum de résolutions différentes,
+il a donc été décidé que la longueur parfaite était de <strong>100 caractères maximum par ligne de code</strong><br />
+Pour ce qui est des <strong>commentaires ou des docstrings</strong>, on se limitera à <strong>72 caractères</strong><br />
+La seconde raison de cette limite est la possibilité d'avoir plusieurs éditeurs de code ouverts simultanément sur un même écran, en les mettant côte à côte,
+avoir des lignes pas trop longues permet d'avoir une vue d'ensemble de tous les codes que nous souhaitons voir, ainsi pour les review ou même pour coder sur
+différentes composantes en même temps, il est plus simple de se restreindre.</p>
+<p>Pour éviter de dépasser cette limite, on peut faire comme vu précédemment, lorsqu'on est dans une parenthèse on peut passer à la ligne. En revanche dans le cas
+d'un "with" avec plusieurs ouvertures, ou d'un "assert", l'utilisation du <strong>\</strong> peut être utile. Voici un exemple d'utilisation:</p>
+<pre><code class="language-python"># Chaque 'and' ou 'or' sera sur une nouvelle ligne 4 espaces plus loin que la parenthèse d'ouverture, soit 1 indentation.
+with open('/chemin/vers/un/fichier') as fichier_1, \\
+        open('/chemin/vers/un/fichier', 'w') as fichier_2:
+    fichier_2.write(fichier_1.read())
+</code></pre>
+<h3 id="les-operateurs">Les opérateurs</h3>
+<p>Vous avez beaucoup de calculs à faire ? Vous n'allez tout de même pas tout mettre sur la même ligne après tout ce qu'on vient de dire ? ;)<br />
+Pour chaque bloc d'opération, nous séparerons en faisant un saut à la ligne et en mettant l'opérateur en début de ligne comme ceci:</p>
+<pre><code class="language-python"># L'opérateur sera aligné avec la parenthèse d'ouverture
+revenu = (salaire
+        - budget_codage
+        + prime_de_votre_gentil_chef
+        * 1.1) #Pour le plaisir
+</code></pre>
+<h3 id="les-sauts-de-lignes">Les sauts de lignes</h3>
+<p>C'est bien connu, un gros bloc, ça donne pas envie de lire.<br />
+On va donc espacer notre code en sautant des lignes <strong>aux bons endroits</strong> et sans en abuser pour ne pas retirer la cohérence du code.</p>
+<pre><code class="language-python"># 1. Un saut de ligne entre les fonctions
+def func_1():
+    return
+
+def func_2():
+    return
+
+# 2. Deux sauts de ligne entre les méthodes de classe et les fonctions
+def methode(self):
+    return
+
+
+def fonction():
+    return
+
+# 3. Un saut de ligne entre un code et une condition
+variable = 1
+test = 2
+
+if variable == 1:
+    return
+
+# 4. Dans les fonctions, 1 saut de ligne entre chaque bloc logique
+def fonction():
+    variable = 1
+    autre_variable = 1
+
+    with open('test') as test:
+        print(test)
+
+    return
+</code></pre>
+<h3 id="les-imports">Les imports</h3>
+<p>Les imports devront toujours se situer <strong>au début du code après le header de documentation</strong>, jamais plus loin. Il faudra les découpler sur
+plusieurs lignes s'ils ne sont pas liés entre eux.<br />
+Ils devront être importés dans l'ordre suivant:</p>
+<ol>
+<li>Librairies standard Python</li>
+<li>Librairies tierces</li>
+<li>Modules internes au code</li>
+</ol>
+<pre><code class="language-python"># Correct:
+import os
+import sys
+
+# Dans le cas d'imports venant d'un même package, il est recommandé de les mettre sur la même ligne:
+from subprocess import Popen, PIPE
+
+# Les imports absolus sont recommandés quand la structure du projet est complexe
+from . import voisin
+from .voisin import fonction
+</code></pre>
+<h3 id="la-documentation-du-module">La documentation du module</h3>
+<p>Au début d'un module, avant tout code, il faut bien écrire la documentation afin de savoir tout de suite quelle est son utilité ou encore à qui
+se réferrer s'il y a un problème ou des questions.<br />
+Cette documentation fait partie du <strong>"docstring"</strong> qui est un peu la "carte d'identité" du projet, on va documenter chaque module et chaque fonction.</p>
+<p>Tout d'abord pour les modules, la documentation se présentera comme ceci:</p>
+<pre><code class="language-python">&quot;&quot;&quot;Module d exemple
+
+Description de la fonction principale du module, ex: Permet d exporter des données au format CSV
+&quot;&quot;&quot;
+
+from __future__ import annotations
+
+__all__ = [&quot;variable1&quot;, &quot;variable2&quot;, &quot;variable3&quot;]
+__version__ = &quot;1.0&quot;
+__author__ = &quot;Alex Lovergne&quot;
+
+import os
+import sys
+
+def fonction_exemple(arg1: String, arg2: String) -&gt; String:
+    &quot;&quot;&quot;Fonction d exemple, définition de son utilité
+        args:
+            - arg1 : String -&gt; Première chaine de caractère
+            - arg2 : String -&gt; Deuxième chaine de caractère à concaténer
+        returns: String -&gt; Concatenation des deux chaines
+    &quot;&quot;&quot;
+    return arg1 + arg2
+</code></pre>
+<p>La variable __all__ permet de définir le nom des variables qui seront exportées du module, par exemple si on a une variable <strong>a = 0</strong>
+définie dans le module et que l'on importe le module ailleurs, seule la variable <strong>a</strong> sera importée.</p>
+<h3 id="les-espaces">Les espaces</h3>
+<p>Les espacements dans le code sont très utiles pour améliorer sa lisibilité et le rendre plus aéré. <strong>On aime bien avoir de la place entre son canapé
+et sa télévision pour bien voir, dans le code c'est pareil.</strong><br />
+Il est important toute fois de ne pas mettre des espaces partout, il y a des emplacements bien définis pour faciliter la lecture et la détection
+rapide de certaines instructions ou syntaxes.</p>
+<pre><code class="language-python"># Entre les parenthèses et les valeurs, pas d'espaces
+acheter(viande[1], {oeufs: 2})
+exemple = (0,)
+
+# 1 espace après les ':' et les ',' mais pas avant.
+# Jamais d espaces entre le nom de fonction et ses arguments. Entre une liste et ses crochets
+if x == 4: print(x, y); x, y = y, x
+def fonction_exemple(arg1: String, arg2: String) -&gt; String:
+dct['key'] = lst[index]
+
+# Toujours un espace de chaque côté du '=', '+', '-', '/', '-&gt;'
+i = i + 1
+ajout += 1
+x = x*2 - 1
+hypot2 = x*x + y*y + y / 2
+c = (a+b) * (a-b)
+</code></pre>
+<h3 id="les-commentaires">Les commentaires</h3>
+<p>Rapide point sur les commentaires, vous devez en avoir marre, les commentaires c'est long et barbant à faire mais malheureusement
+c'est ce qui va aider votre prochain (on est pas à l'église rassurez vous).
+Ainsi écrire des commentaires pour expliquer les points importants du code sont primordiaux surtout s'il s'agit d'un traitement métier qu'un
+autre développeur pourrait ne pas maîtriser.<br />
+Attention cependant à les utiliser avec modération, <strong>Un commentaire à chaque ligne, c'est comme de la moquette sur un mur, c'est dérangeant</strong><br />
+Vous pouvez les mettre sur une nouvelle ligne ou bien en fin de ligne à 2 espaces d'intervalle de la fin de la ligne de code.<br />
+<strong>N'oubliez pas la limite de caractères par ligne !</strong></p>
+<h2 id="les-conventions">Les conventions</h2>
+<h3 id="nommage">Nommage</h3>
+<h4 id="les-variables-et-fonctions">Les variables et fonctions</h4>
+<p>Les variables doivent <strong>toujours avoir un nom explicite</strong>, il faut éviter les variables ayant un nom comme "a" ou "b", mais plutôt "liste<em>mots" ou "dico_noms" par exemple.<br />
+Ensuite, il y a des conventions sur le nommage des variables, en effet on privilégiera les **variables en lettres minuscules, s'il y a plusieurs mots on les séparera
+avec un "</em>", de la forme : liste_mots_a_trier** (c'est un exemple, ne faites pas des noms aussi longs).<br />
+Pour ce qui est des fonctions, nous partirons sur le même principe, il s'agit du snake_case.</p>
+<h4 id="les-classes-et-modules">Les classes et modules</h4>
+<p>Les noms de classes et les modules ont une syntaxe différente, au lieu d'utiliser des lettres en minuscule et des tirets du bas, on va utiliser le <strong>CamelCase</strong>.<br />
+Il s'agit de nommer en collant les mots, à chaque nouveau mot on met une majuscule de cette manière: JeSuisUnNomDeVariable (pas aussi long svp).</p>
+<h4 id="les-constantes">Les constantes</h4>
+<p>Les constantes seront toujours définies au début du script après la documentation et les imports. Ou alors dans les fichiers de config,
+ils seront définis en <strong>majuscules, les mots seront séparés par des "_"</strong><br />
+De la manière suivante: JE_SUIS_UNE_CONSTANTE  </p>
+<blockquote>
+<p><strong>Petit rappel: Une constante est une variable qui sera définie lors de l'écriture du code et ne sera JAMAIS modifiée après.</strong></p>
+</blockquote>
+<h3 id="configuration-deportee">Configuration déportée</h3>
+<p><strong>Quand on a de l'argent liquide, on se promène jamais avec tout sur nous ? Dans le code c'est pareil</strong>, on ne veut pas que nos mots de passes soient visibles pour tous les gens
+qui auraient accès à notre repo git.<br />
+<strong>On n'a pas non plus envie d'aller modifier partout si un mot de passe ou une valeur change ?</strong><br />
+C'est pour ça qu'on va déporter notre configuration, de cette manière on évite tous les problèmes occasionnés par les chaines écrites en dur dans le code, mais aussi
+on renforce la sécurité de notre programme étant donné qu'on ne publiera pas le fichier de config rempli mais plutôt une version d'exemple pour aiguiller une personne
+qui voudrait reprendre notre code mais qui n'aurait pas les mêmes accès que nous.</p>
+<p><strong>Mais comment on fait ?</strong><br />
+C'est très simple, dans le dossier racine de notre projet, on va créer un nouveau dossier <strong>settings</strong>.<br />
+Dans ce dossier nous allons créer un fichier <strong>config.ini</strong> et <strong>config_exemple.ini</strong>. Dans le fichier config.ini nous allons placer nos variables
+qui seront accessibles depuis notre code comme ceci :</p>
+<pre><code class="language-lua">[exemple_1]
+host=srv-exemple1
+database=microcapteurs
+user=exemple
+password=exemple
+
+[exemple_2]
+host=srv-exemple2
+database=microcapteurs
+user=exemple2
+password=exemple2
+</code></pre>
+<p>Ensuite, dans notre fichier <strong>config_exemple.ini</strong> nous allons placer exactement les mêmes variables mais en renseignant de <strong>fausses informations</strong>.</p>
+<p><strong>Comment récupérer nos variables de configuration ?</strong><br />
+C'est très simple, dans notre programme Python nous allons utiliser le module <strong>"configparser"</strong>, il s'utilise comme ceci:</p>
+<pre><code class="language-python">import configparser
+
+config = configparser.ConfigParser() # Initialisation du module
+config.read('./settings/config.ini') # Import de notre configuration
+
+print(config['exemple_1']['host']) # On peut récupérer notre configuration à la manière d'un dictionnaire
+print(config['exemple_2']['user'])
+</code></pre>
+<h3 id="logging">Logging</h3>
+<p>Il est toujours important de garder une trace de l'exécution de notre programme afin de faciliter son debuggage en cas de problème. Pour cela nous n'utiliserons évidemment
+pas la fonction print mais bien la <strong>librairie logging</strong><br />
+Cette librairie Python permet de paramétrer une ou plusieurs sorties pour ce qu'on voudrait afficher/stocker. Il est ainsi possible par exemple pour un logging.info()
+d'enregistrer le résultat dans un fichier .log mais en même temps de l'afficher dans la console.</p>
+<p><strong>Comment l'utiliser ?</strong><br />
+Commençons tout d'abord par créer un fichier <strong>log-config.ini</strong> qui sera situé dans un dossier settings à la racine du programme. Dans ce fichier nous plaçerons ce contenu:</p>
+<pre><code class="language-lua">[loggers]
+keys=root
+
+[handlers]
+keys=consoleHandler,fileHandler
+
+[formatters]
+keys=default
+
+[logger_root]
+level=NOTSET
+handlers=consoleHandler,fileHandler
+
+[handler_consoleHandler]
+class=StreamHandler
+level=NOTSET
+formatter=default
+args=(sys.stdout,)
+
+[handler_fileHandler]
+class=handlers.RotatingFileHandler
+level=NOTSET
+args=('debug.log',2000,100)
+formatter=default
+encoding=utf-8
+
+[formatter_default]
+format=%(asctime)s %(levelname)s %(message)s
+datefmt=
+style=%
+validate=True
+class=logging.Formatter
+</code></pre>
+<p>Il s'agira de notre configuration standard qui sera utilisée pour tous nos projets, elle permet de log dans la console mais aussi dans un fichier debug.log à la racine.<br />
+Le format de sortie sera du type: <strong>YY-MM-DD H:M:S,MS INFO message affiché</strong></p>
+<p>Maintenant que notre fichier de config est créé, nous pouvons l'importer dans notre programme principal, et en suite utiliser la bibiothèque logging.</p>
+<pre><code class="language-python">import logging
+import logging.config
+
+logging.config.fileConfig('settings/log-config.ini')  # Chargement de la config -&gt; 1 seule fois dans le main
+
+logging.info('information') # Pour afficher une étape par exemple
+logging.warning('attention') # Exemple: condition non respectée mais non bloquante
+logging.error('erreur') # Erreur, fin du programme
+</code></pre>
+<h3 id="dependances">Dépendances</h3>
+<p><strong>Qui n'a jamais rêvé de tout installer en une seule commande ?</strong> C'est bien pour ça que les requirements existent et sont utilisés.<br />
+Ils vont permettre d'installer toutes les dépendances de notre projet avec une unique commande, ce qui permet d'éviter les oublis, de fixer une
+version bien définie avec laquelle le programme est compatible mais aussi de gagner du temps et éviter les potentielles failles de sécurité.</p>
+<p><strong>Mais comment qu'on fait ?</strong><br />
+C'est très simple, il suffit de créer un fichier <strong>requirements.txt</strong> à la racine du projet.<br />
+Dans ce fichier nous allons lister nos dépendances ainsi que les versions de cette manière:</p>
+<pre><code class="language-ini">numpy==1.24.2
+requests==2.28.2
+urllib3==1.26.14 # Module == version
+</code></pre>
+<p>Ensuite une fois que c'est fait, on a déjà fini.<br />
+Pour <strong>installer les dépendances</strong> il faut taper la commande: <strong>pip install -r requirements.txt</strong></p>
+<h3 id="modularisation">Modularisation</h3>
+<p><strong>On ne veut pas avoir tout notre code dans un seul fichier, c'est moche de scroll à l'infini pas vrai ?</strong><br />
+On va donc chercher à découpler un maximum notre code en plusieurs modules, dans l'idéal 1 module par utilité.</p>
+<p>Exemple:<br />
+J'ai un fichier <strong>main.py</strong> avec 6 fonctions, une pour exporter des données dans une BDD, une autre pour importer les données d'une source (microcapteur par exemple),
+et 4 autres pour faire des conversions.</p>
+<p><strong>Comment organiser mon code ?</strong><br />
+Une proposition pourrait être de l'organiser de la manière suivante:<br />
+On va s'assurer que chaque module de données soit générique, pour se faire nous utiliserons des <strong>interfaces</strong> (Sensor.py)</p>
+<pre><code class="language-lua">.
+├── main.py
+├── requirements.txt
+├── debug.log
+├── settings/
+│   ├── config.ini
+│   ├── config_example.ini
+│   └── log-config.ini
+├── utils/
+│   └── converters.py
+├── database/
+│   └── Database.py
+└── sensors/
+    ├── Kunak.py
+    └── Sensor.py
+</code></pre>
+<h3 id="les-interfaces">Les interfaces</h3>
+<p><strong>Qu'est-ce qu'une interface ?</strong> Une interface est une classe Python qui permet de définir un cadre qui sera appliqué aux classes héritantes.<br />
+<strong>Mais ça veut dire quoi ?</strong></p>
+<p>Voici un exemple simple:</p>
+<ul>
+<li>J'ai une interface Sensor</li>
+<li>J'ai une classe Kunak</li>
+</ul>
+<p>La classe Sensor se définit de la manière suivante:</p>
+<pre><code class="language-python">class Sensor:
+    def __init__(self, name: str, constructor: str) -&gt; None:
+        self._name = name
+        self._constructor = constructor
+
+    @property
+    def name(self) -&gt; str:
+        return self._name
+
+    @name.setter
+    def name(self, new_name: str):
+        self._name = new_name
+
+    @property
+    def constructor(self) -&gt; str:
+        return self._constructor
+
+    @constructor.setter
+    def constructor(self, new_constructor: str):
+        self._constructor = new_constructor
+
+    def __repr__(self) -&gt; str:
+        return &quot;&lt;sensor %s - constructor:%s&gt;&quot; % (
+            self._name, self._constructor)
+</code></pre>
+<p>La classe Kunak, quant a elle est définie comme ceci:</p>
+<pre><code class="language-python">class Kunak(Sensor): # Hérite de l'interface Sensor
+    def __init__(self, *args) -&gt; None:
+        super().__init__(*args) # Charge la classe parent
+</code></pre>
+<p>Ainsi, si on créé un objet de la classe Kunak on aura:</p>
+<pre><code class="language-python">kun = Kunak('K100', 'Kunak')
+print(kun)
+
+&gt;&gt;&gt; &lt;sensor K100 - Kunak&gt;
+</code></pre>
+<p>La classe de l'objet sera donc 'Kunak', héritant de Sensor. Elle bénéficie donc de toutes les méthodes et attributs définits dans la classe parent.</p>
+<h2 id="boite-a-outils">Boîte à outils</h2>
+<h3 id="sql-alchemy">SQL Alchemy</h3>
+<p>SQL Alchemy est un <strong>module Python qui sert à intéragir avec la base de données</strong>, on appelle ça un <strong>ORM</strong> ou <strong>Object-Relational Mapping</strong>. Il s'agit d'un
+type de programme informatique qui se place en interface entre un programme applicatif et une base de données relationnelle pour simuler une base de données orientée objet.
+(<a href="https://fr.wikipedia.org/wiki/Mapping_objet-relationnel">Voir wikipédia</a>)</p>
+<p>Pour utiliser SQL Alchemy et le relier à notre base de données, il est nécessaire de créer nos <strong>modèles</strong>.</p>
+<p><strong>Qu'est-ce qu'un modèle ?</strong> Un modèle dans notre cas est une classe Python portant le nom d'une table de notre base de données, et qui répertorie les colonnes dont on va avoir besoin.
+Elles doivent exister dans la BDD. Dans le cas où la BDD n'existerait pas encore, les tables seront créées en fonction des modèles définis dans le code.<br />
+Voici un exemple de modèle:</p>
+<pre><code class="language-python">import sqlalchemy as sa
+
+from dbModels.Engine import Base
+
+class Capteurs(Base):
+
+    __tablename__ = 'capteurs'
+
+    id = sa.Column(sa.Integer, nullable=False, primary_key=True)
+    constructeur = sa.Column(sa.VARCHAR)
+    reference_constructeur = sa.Column(sa.VARCHAR)
+    position_actuelle = sa.Column(sa.VARCHAR)
+    modele = sa.Column(sa.VARCHAR)
+    notes = sa.Column(sa.Text)
+    campagne_mesure_actuelle_id = sa.Column(sa.Integer)
+    date_mise_en_service = sa.Column(sa.Date)
+    date_arret = sa.Column(sa.Date)
+    etat = sa.Column(sa.VARCHAR)
+
+    def __init__(self, id, constructeur, reference_constructeur, position_actuelle,
+                 modele, notes, campagne_mesure_actuelle_id, date_mise_en_service,
+                 date_arret, etat):
+
+        self.id = id
+        self.constructeur = constructeur
+        self.reference_constructeur = reference_constructeur
+        self.position_actuelle = position_actuelle
+        self.modele = modele
+        self.notes = notes
+        self.campagne_mesure_actuelle_id = campagne_mesure_actuelle_id
+        self.date_mise_en_service = date_mise_en_service
+        self.date_arret = date_arret
+        self.etat = etat
+
+    def __repr__(self):
+        return &quot;&lt;capteur n°%s - %s - reference -&gt; %s&gt;&quot; % (
+            self.id, self.constructeur, self.reference_constructeur)
+</code></pre>
+<p>Et l'engine qui représente la base de notre connexion à la BDD est difini de la manière suivante:</p>
+<pre><code class="language-python">from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+import configparser
+config = configparser.ConfigParser()
+config.read(&quot;./settings/config.ini&quot;)
+
+def loadSession():
+    metadata = Base.metadata
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session
+
+engine = create_engine('postgresql+psycopg2://%s:%s@%s:5432/%s' %
+                            (config['postgresql']['user'],
+                            config['postgresql']['password'],
+                            config['postgresql']['host'],
+                            config['postgresql']['database']),
+                        )
+
+Base = declarative_base()
+</code></pre>
+<p>La variable <strong>Base</strong> définie ici servira à <strong>instancier tous les modèles de la BDD par héritage</strong>.</p>
+<h3 id="flask">Flask</h3>
+<p>Flask est un framework Python qui permet de créer des sites web et API. Il ne s'agit pas forcément du framework le plus simple, surtout quand on en vient à la gestion du
+contexte, mais il reste très efficace et rapide. De plus il est léger et accompagné de plusieurs extensions avec des modules déjà existants.</p>
+<p>Pour les projets en Flask, la structure la plus pratique et qui nous intéresse le plus en terme de qualité d'architecture est celle ci:</p>
+<pre><code class="language-lua">.
+├── requirements.txt
+├── Dockerfile
+├── server-conf/
+│   ├── nginx.conf
+│   ├── uwsgi.ini
+│   ├── supervisord.conf
+│   └── flask-site-nginx.conf
+└── app/
+    ├── __init__.py
+    ├── conf/
+    │   ├── config.ini
+    │   └── log-config.ini
+    ├── donnees/
+    │   ├── __init__.py
+    │   └── routes.py
+    ├── media/
+    │   ├── __init__.py
+    │   └── routes.py
+    ├── polluant/
+    │   ├── __init__.py
+    │   └── routes.py
+    ├── exploitation/
+    │   └── debug.log
+    ├── models/
+    │   ├── Donnees.py
+    │   ├── Medias.py
+    │   ├── Polluant.py
+    │   └── Engine.py
+    └── utils/
+        └── authUtils.py
+</code></pre>
+<p>Le __init<strong>.py dans app/ va servir à instancier tous les blueprints et les enregistrer dans l'application, mais aussi à créer l'application en elle-même, définir son port d'accès, etc.<br />
+Les blueprints enregistrés dans le init à la racine proviendront des sous-dossiers. Chaque sous-dossier non commun correspond à un endpoint.<br />
+Chaque endpoint aura son blueprint qui est défini dans le __init</strong>.py de chaque sous-dossier. Ensuite les routes liées à ce blueprint sont créées dans le fichier routes.py
+puis importées dans le __init__.py du sous-dossier.<br />
+<strong>Une chaine classique serait donc:</strong></p>
+<pre><code class="language-python"># Finier __init__.py dans app/
+
+from flask import Flask, jsonify, Blueprint
+from flask_cors import CORS
+from .donnees import dataBP
+from .conf.config import Config
+import logging, logging.config
+
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+
+    app.register_blueprint(dataBP) #routes : /donnees, /donnees/&lt;id&gt;
+
+    logging.config.fileConfig(&quot;/project/src/backoffice/app/conf/log-config.ini&quot;)
+
+    cors = CORS(app, supports_credentials=True)
+
+    bp = Blueprint('api', __name__, url_prefix=&quot;/api&quot;)
+
+    return app
+
+app = create_app()
+
+if __name__ == '__main__':
+    create_app().run(port=5001)
+</code></pre>
+<pre><code class="language-python"># Fichier __init__.py dans app/donnees/
+
+from flask import Blueprint
+
+dataBP = Blueprint('donnees', __name__, url_prefix=&quot;/api/donnees&quot;)
+
+from . import route
+</code></pre>
+<pre><code class="language-python"># Fichier routes.py dans app/donnees/
+
+from flask import jsonify, request, current_app
+from ..utils.authUtils import token_required
+from . import dataBP # Import du blueprint pour déclarer nos routes
+
+@dataBP.route('/', methods=['GET']) #Route de base /api/donnees -&gt; toutes les données pour le tableau
+@token_required
+def getDonnees(user):
+    return
+
+@dataBP.route('/&lt;int:id&gt;', methods=['GET']) #Donnée spécifique
+@token_required
+def getDonnee(user, id):
+    return
+
+@dataBP.route('/', methods=['POST'])
+@token_required
+def setDonnee(user): #MAJ ou création d'une donnée
+    return
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
