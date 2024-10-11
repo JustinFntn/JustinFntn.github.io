@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Prise en main - Python Get-started</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Prise en main";
+        var mkdocs_page_input_path = "apprendre.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/sh.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Python Get-started
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Prise en main</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des matières</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction-a-python">Introduction à Python</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#premiers-pas">Premiers Pas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#les-bases-de-python">Les Bases de Python</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structures-de-donnees">Structures de Données</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#programmation-orientee-objet">Programmation Orientée Objet</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gestion-des-exceptions">Gestion des Exceptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ressources-supplementaires">Ressources Supplémentaires</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../conventions/">Conventions et bonnes pratiques</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Python Get-started</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Prise en main</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="apprendre-python-pour-developpeurs-debutants">Apprendre Python pour Développeurs Débutants</h1>
+<h2 id="table-des-matieres">Table des matières</h2>
+<ul>
+<li><a href="#introduction-à-python">Introduction à Python</a></li>
+<li><a href="#premiers-pas">Premiers Pas</a></li>
+<li><a href="#les-bases-de-python">Les Bases de Python</a><ul>
+<li><a href="#variables-et-types-de-données">Variables et Types de Données</a></li>
+<li><a href="#opérateurs">Opérateurs</a></li>
+<li><a href="#structures-conditionnelles">Structures Conditionnelles</a></li>
+<li><a href="#boucles">Boucles</a></li>
+<li><a href="#fonctions">Fonctions</a></li>
+</ul>
+</li>
+<li><a href="#structures-de-données">Structures de Données</a><ul>
+<li><a href="#listes">Listes</a></li>
+<li><a href="#tuples">Tuples</a></li>
+<li><a href="#dictionnaires">Dictionnaires</a></li>
+</ul>
+</li>
+<li><a href="#programmation-orientée-objet">Programmation Orientée Objet</a></li>
+<li><a href="#gestion-des-exceptions">Gestion des Exceptions</a></li>
+<li><a href="#ressources-supplémentaires">Ressources Supplémentaires</a></li>
+</ul>
+<hr />
+<h2 id="introduction-a-python">Introduction à Python</h2>
+<p>Python est un langage de programmation puissant et facile à lire, avec une syntaxe simple qui en fait un excellent choix pour les débutants. Utilisé dans divers domaines comme le développement web, l'analyse de données, et l'intelligence artificielle, il est aussi apprécié pour sa large communauté et ses nombreuses bibliothèques.</p>
+<hr />
+<h2 id="premiers-pas">Premiers Pas</h2>
+<p>Voici un exemple de programme simple en Python, le célèbre "Hello, World!".</p>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>Python exécute les instructions ligne par ligne, et chaque instruction doit être correctement indentée.</p>
+<h2 id="les-bases-de-python">Les Bases de Python</h2>
+<h3 id="variables-et-types-de-donnees">Variables et Types de Données</h3>
+<p>En Python, il n'est pas nécessaire de déclarer explicitement les types de variables, ils sont déduits automatiquement.</p>
+<pre><code class="language-python"># Exemple de types de données
+x = 5          # entier
+y = 3.14       # flottant
+name = &quot;Alice&quot; # chaîne de caractères
+is_valid = True # booléen
+</code></pre>
+<p>Les principaux types de données incluent :</p>
+<p>int : nombres entiers
+float : nombres à virgule flottante
+str : chaînes de caractères
+bool : booléens (True ou False)</p>
+<h3 id="operateurs">Opérateurs</h3>
+<p>Python prend en charge les opérateurs arithmétiques, de comparaison et logiques. Voici quelques exemples :</p>
+<pre><code class="language-python"># Opérateurs arithmétiques
+a = 10
+b = 3
+print(a + b)  # Addition
+print(a - b)  # Soustraction
+print(a * b)  # Multiplication
+print(a / b)  # Division
+print(a % b)  # Modulo (reste de la division)
+
+# Opérateurs de comparaison
+print(a &gt; b)  # True
+print(a == b) # False
+</code></pre>
+<h3 id="structures-conditionnelles">Structures Conditionnelles</h3>
+<p>Les conditions permettent de prendre des décisions dans le code.</p>
+<pre><code class="language-python">x = 10
+if x &gt; 5:
+    print(&quot;x est supérieur à 5&quot;)
+elif x == 5:
+    print(&quot;x est égal à 5&quot;)
+else:
+    print(&quot;x est inférieur à 5&quot;)
+</code></pre>
+<h3 id="boucles">Boucles</h3>
+<p>Les boucles permettent de répéter des instructions.</p>
+<p><strong>La boucle</strong> <code>for</code></p>
+<pre><code class="language-python">for i in range(5):
+    print(i)  # Affiche les nombres de 0 à 4
+</code></pre>
+<p><strong>La boucle</strong> <code>while</code></p>
+<pre><code class="language-python">x = 0
+while x &lt; 5:
+    print(x)
+    x += 1  # Incrémente x
+</code></pre>
+<h3 id="fonctions">Fonctions</h3>
+<p>Les fonctions permettent de regrouper du code réutilisable. Elles sont définies à l'aide du mot-clé def.</p>
+<pre><code class="language-python">def saluer(nom):
+    return f&quot;Bonjour, {nom}!&quot;
+
+print(saluer(&quot;Alice&quot;))  # Appel de la fonction
+</code></pre>
+<h2 id="structures-de-donnees">Structures de Données</h2>
+<h3 id="listes">Listes</h3>
+<p>Les listes sont des collections ordonnées et modifiables.</p>
+<pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;cerise&quot;]
+print(fruits[0])  # Accéder au premier élément
+fruits.append(&quot;orange&quot;)  # Ajouter un élément
+</code></pre>
+<h3 id="tuples">Tuples</h3>
+<p>Les tuples sont des collections ordonnées mais non modifiables.</p>
+<pre><code class="language-python">point = (4, 5)
+print(point[0])  # Accéder au premier élément
+</code></pre>
+<h3 id="dictionnaires">Dictionnaires</h3>
+<p>Les dictionnaires stockent des paires clé-valeur.</p>
+<pre><code class="language-python">personne = {&quot;nom&quot;: &quot;Alice&quot;, &quot;âge&quot;: 25}
+print(personne[&quot;nom&quot;])  # Accéder à une valeur via la clé
+</code></pre>
+<h2 id="programmation-orientee-objet">Programmation Orientée Objet</h2>
+<p>Python est un langage orienté objet, ce qui signifie que vous pouvez créer des <strong>classes</strong> et des <strong>objets</strong>.</p>
+<pre><code class="language-python">class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def se_presenter(self):
+        return f&quot;Je m'appelle {self.nom} et j'ai {self.age} ans.&quot;
+
+# Instanciation d'un objet
+alice = Personne(&quot;Alice&quot;, 25)
+print(alice.se_presenter())
+</code></pre>
+<h3 id="concepts-cles">Concepts clés :</h3>
+<ul>
+<li>Classe : modèle pour créer des objets.</li>
+<li>Objet : instance d'une classe.</li>
+<li>Méthode : fonction définie dans une classe.</li>
+<li>Attributs : variables associées à un objet.</li>
+</ul>
+<h2 id="gestion-des-exceptions">Gestion des Exceptions</h2>
+<p>Les exceptions permettent de gérer les erreurs dans votre programme. Vous pouvez les attraper à l'aide des blocs <code>try-except</code>.</p>
+<pre><code class="language-python">try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print(&quot;Erreur : division par zéro.&quot;)
+</code></pre>
+<p>Cela permet d'éviter que le programme ne s'arrête brusquement.</p>
+<h2 id="ressources-supplementaires">Ressources Supplémentaires</h2>
+<ul>
+<li><a href="https://docs.python.org/fr/3/">Documentation officielle de Python</a></li>
+<li><a href="https://www.w3schools.com/python/">W3Schools Python Tutorial</a></li>
+<li><a href="https://realpython.com/">Real Python</a></li>
+<li><a href="https://www.codecademy.com/learn/learn-python-3">Codecademy - Learn Python</a></li>
+</ul>
+<hr />
+<p>Avec ces bases, vous êtes prêt à explorer plus en profondeur le langage Python et à développer vos propres projets. Bon apprentissage !</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../conventions/" class="btn btn-neutral float-right" title="Conventions et bonnes pratiques">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../conventions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
